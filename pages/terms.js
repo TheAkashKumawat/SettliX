@@ -31,7 +31,7 @@ export default function TermsOfService() {
           <section className="pt-4 border-t border-slate-100">
             <h2 className="text-lg font-bold text-slate-850 mb-3">3. Liability Disclaimer</h2>
             <p className="text-sm leading-relaxed text-slate-600">
-              SpliEasy is provided "as is" by WebTantu. We are not responsible for transaction discrepancies, ledger calculation adjustments, server downtime, database corruption, or failures resulting from unauthorized edits to signature verification endpoints.
+              SpliEasy is provided &ldquo;as is&rdquo; by WebTantu. We are not responsible for transaction discrepancies, ledger calculation adjustments, server downtime, database corruption, or failures resulting from unauthorized edits to signature verification endpoints.
             </p>
           </section>
 

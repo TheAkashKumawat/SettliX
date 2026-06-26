@@ -64,7 +64,7 @@ export default function Layout({ children }) {
           <section className="pt-4 border-t border-slate-100">
             <h3 className="text-base font-bold text-slate-800 mb-2">3. Liability Disclaimer</h3>
             <p className="text-sm text-slate-600 leading-relaxed">
-              SpliEasy is provided "as is" by WebTantu. We are not responsible for transaction discrepancies, ledger calculation adjustments, server downtime, database corruption, or failures resulting from unauthorized edits to signature verification endpoints.
+              SpliEasy is provided &ldquo;as is&rdquo; by WebTantu. We are not responsible for transaction discrepancies, ledger calculation adjustments, server downtime, database corruption, or failures resulting from unauthorized edits to signature verification endpoints.
             </p>
           </section>
           <section className="pt-4 border-t border-slate-100">
