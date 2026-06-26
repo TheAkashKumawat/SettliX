@@ -7,22 +7,23 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        bg: '#0A0A0F',
-        surface: '#13131A',
-        brand: '#7C5CFC',
-        pink: '#FC5C7D',
-        success: '#00D4AA',
+        bg: '#F8FAFC',
+        surface: '#FFFFFF',
+        brand: '#047857',
+        'brand-light': '#ECFDF5',
+        pink: '#E11D48',
+        success: '#10B981',
       },
       fontFamily: {
-        heading: ['Plus Jakarta Sans', 'sans-serif'],
+        heading: ['Outfit', 'sans-serif'],
         body: ['Inter', 'sans-serif'],
       },
       boxShadow: {
-        glow: '0 0 20px rgba(124,92,252,0.35)',
-        card: '0 8px 32px rgba(0,0,0,0.4)',
+        glow: '0 4px 14px rgba(4, 120, 87, 0.25)',
+        card: '0 4px 20px rgba(15, 23, 42, 0.05)',
       },
       backgroundImage: {
-        'gradient-main': 'linear-gradient(135deg, #7C5CFC, #FC5C7D)',
+        'gradient-main': 'linear-gradient(135deg, #047857, #10B981)',
       },
     }
   },

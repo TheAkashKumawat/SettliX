@@ -10,8 +10,11 @@ const ExpenseSchema = new mongoose.Schema({
   groupId: { type: mongoose.Schema.Types.ObjectId, ref: 'Group', required: true },
   description: { type: String, required: true },
   totalAmount: { type: Number, required: true },
+  currency: { type: String, default: 'INR' },
+  exchangeRate: { type: Number, default: 1 },
   paidById: { type: String, required: true },
   paidByName: { type: String, required: true },
+  category: { type: String, enum: ['Food', 'Transport', 'Lodging', 'Shopping', 'Entertainment', 'Others'], default: 'Others' },
   splits: [SplitSchema]
 }, { timestamps: true });
 

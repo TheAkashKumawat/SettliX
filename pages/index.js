@@ -24,9 +24,9 @@ export default function Home({ groups }) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="text-lg text-white/70 max-w-2xl mx-auto mb-10"
+            className="text-lg text-slate-600 max-w-2xl mx-auto mb-10 font-medium"
           >
-            Create groups, add expenses, and settle balances instantly with deep-linked UPI payments. No more awkward math.
+            Create groups, add expenses, and settle balances instantly with Razorpay inside the app. No more awkward math.
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -40,12 +40,12 @@ export default function Home({ groups }) {
         </div>
 
         <div className="mt-16">
-          <h2 className="font-heading text-3xl font-bold mb-8">Your Groups</h2>
+          <h2 className="font-heading text-3xl font-bold mb-8 text-slate-800">Your Groups</h2>
           
           {groups.length === 0 ? (
-            <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-12 text-center">
-              <p className="text-white/50 text-lg mb-6">You don&apos;t have any groups yet.</p>
-              <Link href="/groups/new" className="text-brand hover:text-white transition-colors font-medium">
+            <div className="bg-white border border-slate-100 shadow-card rounded-2xl p-12 text-center">
+              <p className="text-slate-400 text-lg mb-6">You don&apos;t have any groups yet.</p>
+              <Link href="/groups/new" className="text-brand hover:text-emerald-800 transition-colors font-semibold">
                 + Create a new group to get started
               </Link>
             </div>

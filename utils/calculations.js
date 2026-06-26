@@ -1,20 +1,33 @@
-export function calculateBalances(expenses) {
+export function calculateBalances(expenses, settlements = []) {
   const balances = {}; // { memberId: { name, amount } }
   
   expenses.forEach(exp => {
+    const rate = exp.exchangeRate || 1;
+    
     // Credit the payer
     if (!balances[exp.paidById]) {
       balances[exp.paidById] = { name: exp.paidByName, amount: 0 };
     }
-    balances[exp.paidById].amount += exp.totalAmount;
+    balances[exp.paidById].amount += exp.totalAmount * rate;
     
     // Debit each split member
     exp.splits.forEach(split => {
       if (!balances[split.memberId]) {
         balances[split.memberId] = { name: split.memberName, amount: 0 };
       }
-      balances[split.memberId].amount -= split.amount;
+      balances[split.memberId].amount -= split.amount * rate;
     });
+  });
+
+  // Apply completed settlements
+  settlements.forEach(settlement => {
+    if (settlement.status === 'completed') {
+      if (!balances[settlement.fromId]) balances[settlement.fromId] = { name: settlement.fromName, amount: 0 };
+      if (!balances[settlement.toId]) balances[settlement.toId] = { name: settlement.toName, amount: 0 };
+      
+      balances[settlement.fromId].amount += settlement.amount;
+      balances[settlement.toId].amount -= settlement.amount;
+    }
   });
 
   return balances;

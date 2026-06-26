@@ -4,11 +4,11 @@
 
 @layer base {
   body {
-    background-color: #0A0A0F;
-    color: white;
+    background-color: #F8FAFC;
+    color: #1E293B;
   }
   * {
     scrollbar-width: thin;
-    scrollbar-color: #7C5CFC #13131A;
+    scrollbar-color: #047857 #F1F5F9;
   }
 }

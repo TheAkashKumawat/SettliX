@@ -1,5 +1,6 @@
 import connectDB from '../../../lib/connectDB';
 import Expense from '../../../models/Expense';
+import Settlement from '../../../models/Settlement';
 import { calculateBalances, simplifyDebts } from '../../../utils/calculations';
 
 export default async function handler(req, res) {
@@ -11,10 +12,13 @@ export default async function handler(req, res) {
       if (!groupId) return res.status(400).json({ error: 'groupId is required' });
       
       const expenses = await Expense.find({ groupId });
-      const balances = calculateBalances(expenses);
+      const allSettlements = await Settlement.find({ groupId }).sort({ createdAt: -1 });
+      const completedSettlements = allSettlements.filter(s => s.status === 'completed');
+      
+      const balances = calculateBalances(expenses, completedSettlements);
       const debts = simplifyDebts(balances);
       
-      res.status(200).json({ balances, debts });
+      res.status(200).json({ balances, debts, settlements: allSettlements });
     } catch (error) {
       res.status(500).json({ error: 'Failed to calculate balances' });
     }
